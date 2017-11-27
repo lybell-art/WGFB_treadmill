@@ -20,7 +20,7 @@ function draw()
   display_mid(in_bg);
   walk.display(-3,176);
   pop();
-  r+=0.1;
+  r+=0.02;
 }
 
 function display_mid(img)
