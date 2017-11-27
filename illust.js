@@ -18,9 +18,9 @@ function draw()
   display_mid(sky);
   pop();
   display_mid(in_bg);
-  walk.display(-3,176);
+  walk.display(-3,177);
   pop();
-  r+=0.02;
+  r+=radians(8);
 }
 
 function display_mid(img)
