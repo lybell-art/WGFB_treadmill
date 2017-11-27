@@ -37,9 +37,11 @@ function Animation(prefix, count)
 		this.sprite[i]=loadImage(filename);
 	}
 	this.frame=0;
+	this.width=this.sprite[0].width;
+	this.height=this.sprite[0].height;
 	this.display=function(x,y)
 	{
 		this.frame=(this.frame+1)%this.imageCount;
-		display_mid(this.sprite[this.frame],x,y);
+		image(this.sprite[this.frame],x-this.width/2,y-this.height/2);
 	}
 }
