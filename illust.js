@@ -1,5 +1,5 @@
 var img;
-var r;
+var r=0;
 function preload() {
   img = loadImage("source/sky.png");
 }
