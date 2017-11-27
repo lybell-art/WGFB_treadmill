@@ -21,7 +21,7 @@ function draw()
   display_mid(sky);
   pop();
   display_mid(in_bg);
-  walk.setSped(speed);
+  walk.setSpeed(speed);
   walk.display(-3,177);
   pop();
   r+=radians(8/60*speed);
