@@ -37,8 +37,8 @@ function Animation(prefix, count)
 		this.sprite[i]=loadImage(filename);
 	}
 	this.frame=0;
-	this.width=this.sprite[0].width;
-	this.height=this.sprite[0].height;
+	this.width=130;
+	this.height=320;
 	this.display=function(x,y)
 	{
 		this.frame=(this.frame+1)%this.imageCount;
