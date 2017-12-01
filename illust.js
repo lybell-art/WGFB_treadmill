@@ -20,9 +20,9 @@ function setup() {
   detector=new objectdetect.detector(w,h,scaleFactor, classifier);
   cam=createCapture(VIDEO);
   cam.size(w,h);
+  cam.hide();
   img=new p5.Image(w,h);
   walk.before=millis();
-	
 }
 function draw()
 {
