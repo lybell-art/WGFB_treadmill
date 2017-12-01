@@ -2,6 +2,13 @@ var sky, in_bg;
 var walk;
 var r=0;
 var gazer=1;
+//face detect
+var detector;
+var classifier = objectdetect.frontalface;
+var cam;
+var w=320;
+var h=240;
+var img;
 function preload() {
   sky = loadImage("source/sky.png");
   in_bg = loadImage("source/in_bg.png");
@@ -9,10 +16,24 @@ function preload() {
 }
 function setup() {
   createCanvas(1000,1400);
+  var scaleFactor=2.0;
+  detector=new objectdetect.detector(w,h,scaleFactor, classifier);
+  cam=createCapture(VIDEO);
+  cam.size(w,h);
+  img=new p5.Image(w,h);
   walk.before=millis();
+	
 }
 function draw()
 {
+  if(frameCount%60==0)
+  {
+    img.copy(cam,0,0,w,h,0,0,w,h);
+    var faces=detector.detect(img.canvas);
+    console.log(faces);
+    gazer=constrain(faces.length,0,8);
+    console.log(gazer);
+  }
   var speed=1+gazer*0.5;
   push();
   translate(width/2,height/2);
