@@ -8,7 +8,7 @@ function preload() {
   walk = new Animation("source/walk-",60);
 }
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(1000,1400);
   walk.before=millis();
 }
 function draw()
